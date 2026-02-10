@@ -10,9 +10,12 @@ const pool = createPool({
     queueLimit: 0
 })
 
-module.exports = pool;
+const connection = pool.getConnection((err) => {
+    if(err) {
+        console.log(`Errore di connessione al database: ${err}`);
+    } else {
+        console.log(`Connessione al database riuscita`)
+    }
+})
 
-// pool.query('SELECT * FROM progetti', (err, res, fields) => {
-//     if (err) throw err;
-//     console.log(res);
-/
+module.exports = pool;
