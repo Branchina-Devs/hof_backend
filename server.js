@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const progettiRoutes = require('./routes/progetti');
 const studentiRoutes = require ('./routes/studenti');
+const readmeRoutes = require ('./routes/readme.js');
 const progettoStudentiRoutes = require('./routes/progetto_studenti')
 const port = 3000;
 
@@ -15,7 +16,8 @@ app.get('/', (req, res) => {
 //router per gestire tutte le richieste che iniziano con /api/'x' saranno gestite da xRoutes
 app.use('/api/progetti', progettiRoutes);
 app.use('/api/studenti', studentiRoutes);
-app.use('/api/progetto_studenti', progettoStudentiRoutes)
+app.use('/api/readme', readmeRoutes);
+app.use('/api/progetto_studenti', progettoStudentiRoutes);
 
 //avvio del server sulla porta 3000
 app.listen(port, () => {

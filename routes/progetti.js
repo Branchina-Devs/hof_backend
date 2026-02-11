@@ -14,6 +14,10 @@ router.get('/', (req, res) => {
     })
 })
 
+
+
+
+
 //route per ottenere un progetto specifico tramite id
 router.get('/:id', (req, res) => {
     const id = req.params.id;
@@ -27,5 +31,8 @@ router.get('/:id', (req, res) => {
         res.json(results[0]);
     })
 })
+
+
+
 
 module.exports = router;
