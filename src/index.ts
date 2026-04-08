@@ -15,11 +15,6 @@ async function start() {
 
   app.use(cors());
   app.use(express.json());
-  app.use(express.static(path.join(__dirname, '..', 'dist')));
-
-  app.get('/', (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
-  });
 
   app.use('/api/progetti', progettiRoutes);
 /*   app.use('/api/studenti', studentiRoutes); */
