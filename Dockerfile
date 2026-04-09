@@ -50,6 +50,8 @@ COPY --from=deps /app/node_modules ./node_modules
 
 COPY --from=build /app/dist ./dist
 
+COPY migrations /app/dist/migrations
+
   
 
 # (opzionale) copia package.json per metadata/scripts
